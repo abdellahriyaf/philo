@@ -362,3 +362,14 @@ h3 {
 .kicker::before{content:"";display:inline-block;width:.55rem;height:.55rem;background:var(--axis);transform:rotate(45deg);margin-inline-end:.6rem}
 .pager a{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:.9rem}
+
+/* ---- tables (argumentation page) ---- */
+.tblwrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;min-width:32rem}
+.tbl th,.tbl td{padding:.6rem 1rem;text-align:start;vertical-align:top;border-bottom:1px solid var(--rule)}
+.tbl th{font-weight:700;color:var(--axis,var(--c));white-space:nowrap;background:color-mix(in srgb,var(--axis,var(--c)) 8%,var(--surface))}
+.tbl td:first-child{font-weight:700;white-space:nowrap}
+.tbl tbody tr:hover{background:color-mix(in srgb,var(--axis,var(--c)) 6%,var(--surface))}
+.tbl tr:last-child td{border-bottom:0}
+.tip{margin:1rem 0 0;padding:.8rem 1.1rem;border-inline-start:4px solid var(--axis,var(--c));background:color-mix(in srgb,var(--axis,var(--c)) 8%,var(--surface));border-radius:4px}
+@media print{.tblwrap{overflow:visible}.tbl{min-width:0}}

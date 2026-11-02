@@ -10,6 +10,8 @@ window.SITE = {
     { id: 3, title: "السياسة", color: "#c98a1b", desc: "الدولة والحق والعدالة.",
       subunits: [ { id: 1, title: "الدولة", file: "content/u3-s1.html" }, { id: 2, title: "الحق والعدالة", file: "content/u3-s2.html" } ] },
     { id: 4, title: "الأخلاق", color: "#a8453f", desc: "الحرية.",
-      subunits: [ { id: 1, title: "الواجب", file: "content/u4-s1.html" }, { id: 2, title: "الحرية", file: "content/u4-s2.html" } ] }
+      subunits: [ { id: 1, title: "الواجب", file: "content/u4-s1.html" }, { id: 2, title: "الحرية", file: "content/u4-s2.html" } ] },
+    { id: 5, title: "الحجاج", color: "#6b4a8f", desc: "الأساليب والحجج والمغالطات.",
+      subunits: [ { id: 1, title: "الجدول الشامل", file: "content/argumentation.html" } ] }
   ]
 };
