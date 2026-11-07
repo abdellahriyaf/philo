@@ -350,12 +350,14 @@ h3 {
 @media print{.sitebar,.pager{display:none}}
 
 /* ---- shared look (home + lessons) ---- */
-:root{--gold:#e0a93b;--c:#c98a1b}
+:root{--gold:#e0a93b;--c:#946a0f}
+body{--c-ink:color-mix(in srgb,var(--c) 70%,#000)}
+@media (prefers-color-scheme:dark){body{--c-ink:color-mix(in srgb,var(--c) 60%,#fff)}}
 .hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23e0a93b' stroke-opacity='.22'%3E%3Crect x='14' y='14' width='36' height='36'/%3E%3Crect x='14' y='14' width='36' height='36' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");text-align:center}
 .hero h1{color:var(--gold)}
 .hero .lede{margin-inline:auto}
 .hero::after{background:var(--c)}
-.intro-block,.concepts-block{--axis:var(--c)}
+.intro-block,.concepts-block{--axis:var(--c-ink)}
 .block{padding:1.25rem 0;border-bottom:0}
 .block>.wrap{width:min(1080px,calc(100% - 2rem));padding:clamp(1.25rem,3vw,2.25rem);background:var(--surface);
   border:1px solid var(--rule);border-top:6px solid var(--axis,var(--c));border-radius:6px}
@@ -367,7 +369,7 @@ footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:.9rem}
 .tblwrap{overflow-x:auto}
 .tbl{width:100%;border-collapse:collapse;min-width:32rem}
 .tbl th,.tbl td{padding:.6rem 1rem;text-align:start;vertical-align:top;border-bottom:1px solid var(--rule)}
-.tbl th{font-weight:700;color:var(--axis,var(--c));white-space:nowrap;background:color-mix(in srgb,var(--axis,var(--c)) 8%,var(--surface))}
+.tbl th{font-weight:700;color:var(--axis,var(--c-ink));white-space:nowrap;background:color-mix(in srgb,var(--axis,var(--c)) 8%,var(--surface))}
 .tbl td:first-child{font-weight:700;white-space:nowrap}
 .tbl tbody tr:hover{background:color-mix(in srgb,var(--axis,var(--c)) 6%,var(--surface))}
 .tbl tr:last-child td{border-bottom:0}

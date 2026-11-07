@@ -9,3 +9,6 @@ if ($('#units')) {
       <ul>${u.subunits.map(s => `<li><a href="${link(u, s)}">${s.title}</a></li>`).join('')}</ul>
     </section>`).join('');
 }
+
+if ($('.hero h1')) $('.hero h1').textContent = title;
+if ($('.hero .lede')) $('.hero .lede').textContent = subtitle;
