@@ -500,3 +500,25 @@ body { --uc: var(--c, var(--accent-strong)); }
   .qtext { font-size: 1.28rem; }
 }
 .block h3 { color: var(--uc); }
+
+/* ---- Motion: one load sequence, scroll reveal, hover feedback ---- */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  .hero h1 { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .topnav { animation: rise .6s .15s cubic-bezier(.2,.7,.2,1) both; }
+  .reading-progress span { transition: width .12s linear; }
+
+  .reveal-on .quotes li, .reveal-on .theses li, .reveal-on .args li,
+  .reveal-on .ideas li, .reveal-on .problem, .reveal-on .concept {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+  .reveal-on .is-in { opacity: 1 !important; transform: none !important; }
+
+  .quotes li { transition: box-shadow .25s ease, border-color .25s ease; }
+  .quotes li.is-in:hover { transform: translateY(-3px) !important; box-shadow: var(--shadow-md); transition-delay: 0s; }
+  .topnav a { transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .pager a { transition: transform .2s ease, box-shadow .2s ease; }
+  .pager a:hover { transform: translateY(-2px); }
+}

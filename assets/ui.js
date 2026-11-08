@@ -131,3 +131,24 @@
     }
   }
 })();
+
+// Scroll reveal: cards fade in once as they enter the viewport.
+(() => {
+  "use strict";
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const items = document.querySelectorAll(".quotes li, .theses li, .args li, .ideas li, .problem, .concept");
+  if (!items.length) return;
+  document.documentElement.classList.add("reveal-on");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-in");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: .08 });
+  items.forEach((el) => {
+    const sibs = el.parentElement ? [...el.parentElement.children] : [el];
+    el.style.setProperty("--i", Math.min(sibs.indexOf(el), 5));
+    io.observe(el);
+  });
+})();
