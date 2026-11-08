@@ -451,3 +451,52 @@ footer { padding: 1.6rem; color: var(--muted); font-size: .85rem; text-align: ce
   .tblwrap { overflow: visible; }
   .tbl { min-width: 0; }
 }
+
+/* ---- Refinement pass: unit identity, compact hero, quote cards ---- */
+body { --uc: var(--c, var(--accent-strong)); }
+:root[data-theme="dark"] body { --uc: color-mix(in srgb, var(--c, var(--accent-strong)) 55%, #fff); }
+
+/* 1. Unit colour drives the accents */
+.kicker { color: var(--uc); }
+.kicker::before { background: var(--uc); }
+.topnav a:hover, .topnav a.is-active {
+  color: var(--uc);
+  background: color-mix(in srgb, var(--uc) 12%, transparent);
+  border-color: color-mix(in srgb, var(--uc) 35%, transparent);
+}
+.reading-progress span { background: var(--uc); }
+.qsrc b { color: var(--uc); }
+.hero { background: radial-gradient(ellipse at 85% 0%, color-mix(in srgb, var(--uc) 14%, transparent), transparent 26rem); }
+
+/* 2. Compact lesson hero: title only, content starts higher */
+.hero { padding-block: 1.8rem 1.3rem; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin: 0; }
+.hero .lede { display: none; }
+
+/* 3. Quotes as the premium element */
+.quotes { gap: 1.1rem; align-items: stretch; }
+.quotes li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.5rem 1.2rem;
+  border: 1px solid var(--line);
+  border-inline-start: 4px solid var(--uc);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--uc) 4%, var(--surface));
+  box-shadow: var(--shadow-sm);
+}
+.qtext { flex: 1; font-size: 1.4rem; line-height: 2; margin-bottom: 1rem; }
+.qsrc {
+  margin-top: auto;
+  padding-top: .8rem;
+  border-top: 1px solid color-mix(in srgb, var(--uc) 22%, var(--line));
+}
+.qsrc b { display: inline-block; font-size: .98rem; }
+
+/* back-to-top no longer covers the last line on phones */
+@media (max-width: 640px) {
+  body { padding-bottom: 4rem; }
+  .qtext { font-size: 1.28rem; }
+}
+.block h3 { color: var(--uc); }
