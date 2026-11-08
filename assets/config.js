@@ -9,8 +9,8 @@ window.SITE = {
       subunits: [ { id: 1, title: "النظرية والتجربة", file: "content/u2-s1.html" }, { id: 2, title: "الحقيقة", file: "content/u2-s2.html" } ] },
     { id: 3, title: "السياسة", color: "#946a0f", desc: "الدولة والحق والعدالة.",
       subunits: [ { id: 1, title: "الدولة", file: "content/u3-s1.html" }, { id: 2, title: "الحق والعدالة", file: "content/u3-s2.html" } ] },
-    { id: 4, title: "الأخلاق", color: "#a8453f", desc: "الحرية والسعادة.",
-      subunits: [ { id: 1, title: "الحرية", file: "content/u4-s1.html" }, { id: 2, title: "السعادة", file: "content/u4-s2.html" } ] },
+    { id: 4, title: "الأخلاق", color: "#a8453f", desc: "الواجب والحرية.",
+      subunits: [ { id: 1, title: "الواجب", file: "content/u4-s1.html" }, { id: 2, title: "الحرية", file: "content/u4-s2.html" } ] },
     { id: 5, title: "الحجاج", color: "#6b4a8f", desc: "الأساليب والحجج والمغالطات.",
       subunits: [ { id: 1, title: "الحجاج والأساليب الحجاجية", file: "content/argumentation.html" } ] }
   ]
