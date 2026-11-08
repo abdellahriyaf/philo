@@ -3,7 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(() => {
+  try {
+    const saved = localStorage.getItem("philo-theme");
+    const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = saved || (systemDark ? "dark" : "light");
+  } catch (_) { document.documentElement.dataset.theme = "light"; }
+})();
+</script>
+
 <title>الحقيقة · المعرفة</title>
+<meta name="description" content="درس مفهوم الحقيقة في مجزوءة المعرفة: الحقيقة والرأي، معايير الحقيقة، والحقيقة باعتبارها قيمة.">
+<link rel="canonical" href="https://abdellahriyaf.github.io/philo/content/u2-s2.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_MA">
+<meta property="og:title" content="مفهوم الحقيقة | الفلسفة - المعرفة">
+<meta property="og:description" content="درس مفهوم الحقيقة في مجزوءة المعرفة: الحقيقة والرأي، معايير الحقيقة، والحقيقة باعتبارها قيمة.">
+<meta property="og:url" content="https://abdellahriyaf.github.io/philo/content/u2-s2.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="مفهوم الحقيقة | الفلسفة - المعرفة">
+<meta name="twitter:description" content="درس مفهوم الحقيقة في مجزوءة المعرفة: الحقيقة والرأي، معايير الحقيقة، والحقيقة باعتبارها قيمة.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -215,8 +235,8 @@
         <p class="qsrc"><b>بوبر</b><br>حدوس وتفنيدات، الفصل الأول</p>
       </li>
       <li>
-        <p class="qtext">«طلب علامة كلية للحقيقة بالنظر إلى مضمون المعرفة أمر مستحيل بل متناقض».</p>
-        <p class="qsrc"><b>كانط</b><br>نقد العقل المحض، المنطق المتعالي <b>(للتحقق)</b></p>
+        <p class="qtext">لا يمكن تقديم معيار كلي كافٍ للحقيقة من جهة مضمون المعرفة؛ لأن الحقيقة تتعلق بهذا المضمون نفسه.</p>
+        <p class="qsrc"><b>كانط</b><br>نقد العقل المحض، المنطق العام، القسم الثالث: «تقسيم المنطق العام إلى تحليلي وجدلي»، A58–59 / B82–83 (تلخيص للمعنى، لا اقتباس حرفي).</p>
       </li>
     </ol>
 
@@ -337,5 +357,6 @@
 
 </main>
 <nav class="wrap pager" aria-label="التنقل بين الدروس"><a href="u2-s1.html">السابق: النظرية والتجربة</a><a href="u3-s1.html">التالي: الدولة</a></nav>
+  <script src="../assets/ui.js" defer></script>
 </body>
 </html>

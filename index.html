@@ -1,6 +1,128 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>الفلسفة · الثانية بكالوريا</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/home.css"></head>
-<body><header class="hero"><div class="wrap"><h1>الفلسفة</h1><p class="lede"></p></div></header>
-<main class="wrap"><div id="units"></div><noscript><ul><li><a href="content/u1-s1.html">الشخص</a></li><li><a href="content/u1-s2.html">الغير</a></li><li><a href="content/u2-s1.html">النظرية والتجربة</a></li><li><a href="content/u2-s2.html">الحقيقة</a></li><li><a href="content/u3-s1.html">الدولة</a></li><li><a href="content/u3-s2.html">الحق والعدالة</a></li><li><a href="content/u4-s1.html">الواجب</a></li><li><a href="content/u4-s2.html">الحرية</a></li><li><a href="content/argumentation.html">الحجاج</a></li></ul></noscript></main><footer>اضغط على أي درس لبدء المراجعة</footer>
-<script src="assets/config.js"></script><script src="assets/app.js"></script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>الفلسفة | مساحة المراجعة الشخصية</title>
+  <meta name="description" content="مساحة شخصية لمراجعة الفلسفة للثانية بكالوريا علوم رياضية، تضم دروس الوضع البشري والمعرفة والسياسة والأخلاق والحجاج.">
+  <link rel="canonical" href="https://abdellahriyaf.github.io/philo/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_MA">
+  <meta property="og:title" content="الفلسفة | مساحة المراجعة الشخصية">
+  <meta property="og:description" content="دروس الفلسفة للثانية بكالوريا علوم رياضية، في واجهة هادئة وواضحة للقراءة والمراجعة.">
+  <meta property="og:url" content="https://abdellahriyaf.github.io/philo/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="الفلسفة | مساحة المراجعة الشخصية">
+  <meta name="twitter:description" content="دروس الفلسفة للثانية بكالوريا علوم رياضية.">
+  <meta name="theme-color" content="#f4f8fc">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('philo-theme');
+        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (systemDark ? 'dark' : 'light');
+      } catch (_) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/home.css">
+</head>
+<body class="home-page">
+  <header class="app-header">
+    <div class="wrap header-inner">
+      <a class="brand-mark" href="index.html" aria-label="الفلسفة، الصفحة الرئيسية">
+        <span class="brand-symbol" aria-hidden="true">ف</span>
+        <span class="brand-copy">الفلسفة<small>مساحة المراجعة الشخصية</small></span>
+      </a>
+      <div class="header-actions">
+        <span class="header-context">الثانية بكالوريا <i></i> علوم رياضية</span>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="تفعيل الوضع الداكن" title="تبديل المظهر">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-label">المظهر</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap home-main">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> مساحة شخصية للتعلّم والمراجعة</p>
+        <h1 id="home-title">الفلسفة</h1>
+        <p class="lede">دروس ومفاهيم ومواقف فلسفية، مرتّبة في مكان واحد للمراجعة بهدوء ووضوح.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#curriculum">عرض المسار الدراسي <span aria-hidden="true">←</span></a>
+          <a class="button button-quiet" href="content/argumentation.html">منهجية الحجاج</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-core"><span>ف</span></div>
+        <div class="art-chip chip-top"><span class="chip-dot"></span> المفاهيم</div>
+        <div class="art-chip chip-side"><span class="chip-dot"></span> المواقف</div>
+        <div class="art-chip chip-bottom"><span class="chip-dot"></span> الحجاج</div>
+      </div>
+    </section>
+
+    <section class="overview-strip" aria-label="ملخص المحتوى">
+      <div class="overview-item"><span class="overview-number">04</span><span><b>مجزوءات</b><small>المقرر الأساسي</small></span></div>
+      <div class="overview-divider" aria-hidden="true"></div>
+      <div class="overview-item"><span class="overview-number">08</span><span><b>دروس</b><small>مفاهيم ومحاور</small></span></div>
+      <div class="overview-divider" aria-hidden="true"></div>
+      <div class="overview-item"><span class="overview-number">01</span><span><b>مرجع منهجي</b><small>الحجاج وتحليل النص</small></span></div>
+    </section>
+
+    <section class="timeline-section" id="curriculum" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">خريطة المحتوى</p>
+          <h2 id="timeline-title">المسار الدراسي</h2>
+          <p>المجزوءات الأربع مرتّبة حسب تسلسل المقرر.</p>
+        </div>
+        <span class="section-count">04 مجزوءات</span>
+      </div>
+      <nav class="unit-timeline" aria-label="الانتقال بين المجزوءات">
+        <a href="#unit-1"><span class="timeline-number">01</span><span class="timeline-label">الوضع البشري</span></a>
+        <a href="#unit-2"><span class="timeline-number">02</span><span class="timeline-label">المعرفة</span></a>
+        <a href="#unit-3"><span class="timeline-number">03</span><span class="timeline-label">السياسة</span></a>
+        <a href="#unit-4"><span class="timeline-number">04</span><span class="timeline-label">الأخلاق</span></a>
+      </nav>
+    </section>
+
+    <section class="library-section" aria-labelledby="library-title">
+      <div class="section-heading library-heading">
+        <div>
+          <p class="eyebrow">مكتبة الدروس</p>
+          <h2 id="library-title">محتوى المراجعة</h2>
+          <p>اختر مجزوءة أو ابحث عن درس محدّد.</p>
+        </div>
+        <label class="lesson-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="lesson-search" type="search" placeholder="ابحث عن درس أو مجزوءة..." autocomplete="off" aria-label="ابحث عن درس أو مجزوءة">
+          <kbd>⌕</kbd>
+        </label>
+      </div>
+      <p class="search-count" id="search-count" aria-live="polite">جميع الدروس</p>
+      <div id="units" class="unit-grid" aria-live="polite">
+        <section class="unit" id="unit-1"><div class="unit-head"><span class="unit-no">01</span><div class="unit-copy"><p class="unit-kicker">المجزوءة الأولى</p><h3>الوضع البشري</h3><p>من أنا؟ وكيف أعيش مع الآخرين؟</p></div></div><ul class="unit-lessons"><li><a href="content/u1-s1.html"><span>الشخص</span><span aria-hidden="true">←</span></a></li><li><a href="content/u1-s2.html"><span>الغير</span><span aria-hidden="true">←</span></a></li></ul></section>
+        <section class="unit" id="unit-2"><div class="unit-head"><span class="unit-no">02</span><div class="unit-copy"><p class="unit-kicker">المجزوءة الثانية</p><h3>المعرفة</h3><p>كيف نعرف؟ وما قيمة العلم؟</p></div></div><ul class="unit-lessons"><li><a href="content/u2-s1.html"><span>النظرية والتجربة</span><span aria-hidden="true">←</span></a></li><li><a href="content/u2-s2.html"><span>الحقيقة</span><span aria-hidden="true">←</span></a></li></ul></section>
+        <section class="unit" id="unit-3"><div class="unit-head"><span class="unit-no">03</span><div class="unit-copy"><p class="unit-kicker">المجزوءة الثالثة</p><h3>السياسة</h3><p>الدولة والحق والعدالة.</p></div></div><ul class="unit-lessons"><li><a href="content/u3-s1.html"><span>الدولة</span><span aria-hidden="true">←</span></a></li><li><a href="content/u3-s2.html"><span>الحق والعدالة</span><span aria-hidden="true">←</span></a></li></ul></section>
+        <section class="unit" id="unit-4"><div class="unit-head"><span class="unit-no">04</span><div class="unit-copy"><p class="unit-kicker">المجزوءة الرابعة</p><h3>الأخلاق</h3><p>الحرية والسعادة.</p></div></div><ul class="unit-lessons"><li><a href="content/u4-s1.html"><span>الحرية</span><span aria-hidden="true">←</span></a></li><li><a href="content/u4-s2.html"><span>السعادة</span><span aria-hidden="true">←</span></a></li></ul></section>
+        <section class="unit unit-support" id="unit-5"><div class="unit-head"><span class="unit-no">+</span><div class="unit-copy"><p class="unit-kicker">مرجع إضافي</p><h3>الحجاج</h3><p>الأساليب والحجج والمغالطات ومنهجية تحليل النص.</p></div></div><ul class="unit-lessons"><li><a href="content/argumentation.html"><span>الحجاج والأساليب الحجاجية</span><span aria-hidden="true">←</span></a></li></ul></section>
+      </div>
+      <p class="empty-search" id="empty-search" hidden>لا توجد دروس تطابق عبارة البحث.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><span>الفلسفة · مساحة المراجعة الشخصية</span><a href="#curriculum">العودة إلى المسار ↑</a></div></footer>
+  <script src="assets/config.js"></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/ui.js" defer></script>
+</body>
+</html>

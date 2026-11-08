@@ -3,7 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(() => {
+  try {
+    const saved = localStorage.getItem("philo-theme");
+    const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = saved || (systemDark ? "dark" : "light");
+  } catch (_) { document.documentElement.dataset.theme = "light"; }
+})();
+</script>
+
 <title>الغير · الوضع البشري</title>
+<meta name="description" content="درس مفهوم الغير في مجزوءة الوضع البشري: وجود الغير، معرفة الغير، والعلاقة مع الغير.">
+<link rel="canonical" href="https://abdellahriyaf.github.io/philo/content/u1-s2.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_MA">
+<meta property="og:title" content="مفهوم الغير | الفلسفة - الوضع البشري">
+<meta property="og:description" content="درس مفهوم الغير في مجزوءة الوضع البشري: وجود الغير، معرفة الغير، والعلاقة مع الغير.">
+<meta property="og:url" content="https://abdellahriyaf.github.io/philo/content/u1-s2.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="مفهوم الغير | الفلسفة - الوضع البشري">
+<meta name="twitter:description" content="درس مفهوم الغير في مجزوءة الوضع البشري: وجود الغير، معرفة الغير، والعلاقة مع الغير.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -290,7 +310,7 @@
       </li>
       <li>
         <p class="qtext">«النزاع هو المعنى الأصلي للوجود من أجل الغير».</p>
-        <p class="qsrc"><b>سارتر</b><br>الوجود والعدم (تحقق من موضع الصيغة قبل اعتمادها حرفيًا)</p>
+        <p class="qsrc"><b>سارتر</b><br>الوجود والعدم، الجزء الثالث، الفصل الأول: «وجود الغير» (ترجمة عربية لعبارة فرنسية؛ تختلف الصفحات باختلاف الطبعات)</p>
       </li>
       <li>
         <p class="qtext">«الإنسان يصير أنا بفضل أنت».</p>
@@ -331,5 +351,6 @@
 </section>
 
 <nav class="wrap pager" aria-label="التنقل بين الدروس"><a href="u1-s1.html">السابق: الشخص</a><a href="u2-s1.html">التالي: النظرية والتجربة</a></nav>
+  <script src="../assets/ui.js" defer></script>
 </body>
 </html>

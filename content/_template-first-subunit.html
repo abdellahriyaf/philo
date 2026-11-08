@@ -3,7 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(() => {
+  try {
+    const saved = localStorage.getItem("philo-theme");
+    const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.dataset.theme = saved || (systemDark ? "dark" : "light");
+  } catch (_) { document.documentElement.dataset.theme = "light"; }
+})();
+</script>
+
 <title>اسم المفهوم · الوضع البشري</title>
+<meta name="robots" content="noindex,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -60,5 +71,6 @@
 </div></section>
 
 <div class="wrap pager"><span></span><span></span></div>
+  <script src="../assets/ui.js" defer></script>
 </body>
 </html>
