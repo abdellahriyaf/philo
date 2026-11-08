@@ -152,3 +152,87 @@
     io.observe(el);
   });
 })();
+
+// Hero background: drifting particles joined by thin lines (home + lesson headers).
+(() => {
+  "use strict";
+  const host = document.querySelector(".home-hero, header.hero");
+  if (!host || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const canvas = document.createElement("canvas");
+  canvas.className = "hero-bg";
+  canvas.setAttribute("aria-hidden", "true");
+  host.prepend(canvas);
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  let w = 0, h = 0, dpr = 1, dots = [], color = "96,151,199", running = true, tick = 0;
+  const mouse = { x: -999, y: -999 };
+
+  const readColor = () => {
+    const probe = document.createElement("span");
+    probe.style.color = getComputedStyle(document.body).getPropertyValue("--uc").trim()
+      || getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#6097c7";
+    document.body.appendChild(probe);
+    const m = getComputedStyle(probe).color.match(/\d+(\.\d+)?/g);
+    probe.remove();
+    if (m && m.length >= 3) color = `${m[0]},${m[1]},${m[2]}`;
+  };
+
+  const resize = () => {
+    const r = host.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = Math.max(1, r.width); h = Math.max(1, r.height);
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.min(70, Math.round((w * h) / 9000));
+    dots = Array.from({ length: n }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+      r: Math.random() * 1.4 + .7
+    }));
+  };
+
+  const frame = () => {
+    if (!running) return;
+    if (tick++ % 90 === 0) readColor();
+    ctx.clearRect(0, 0, w, h);
+    const link = 120;
+    for (let i = 0; i < dots.length; i++) {
+      const a = dots[i];
+      a.x += a.vx; a.y += a.vy;
+      if (a.x < 0 || a.x > w) a.vx *= -1;
+      if (a.y < 0 || a.y > h) a.vy *= -1;
+      ctx.fillStyle = `rgba(${color},.55)`;
+      ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();
+      for (let j = i + 1; j < dots.length; j++) {
+        const b = dots[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < link) {
+          ctx.strokeStyle = `rgba(${color},${(1 - d / link) * .28})`;
+          ctx.lineWidth = .8;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      const dm = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+      if (dm < 150) {
+        ctx.strokeStyle = `rgba(${color},${(1 - dm / 150) * .4})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+      }
+    }
+    requestAnimationFrame(frame);
+  };
+
+  host.addEventListener("pointermove", (e) => {
+    const r = host.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  host.addEventListener("pointerleave", () => { mouse.x = mouse.y = -999; });
+  window.addEventListener("resize", resize);
+
+  // Pause when the hero is off-screen or the tab is hidden.
+  const start = () => { if (!running) { running = true; requestAnimationFrame(frame); } };
+  new IntersectionObserver(([e]) => { if (e.isIntersecting) start(); else running = false; }).observe(host);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) running = false; else start(); });
+
+  readColor(); resize(); requestAnimationFrame(frame);
+})();
