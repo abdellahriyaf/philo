@@ -1,5 +1,7 @@
+/* © 2026 الفلسفة — مساحة المراجعة. All rights reserved. Unauthorized copying, republishing or modification is prohibited. Origin ID: PHL-C88920325B7DD9DB */
 // ✏️ عدّل هنا عناوين الوحدات والدروس (المحتوى الفعلي في مجلد content/)
 window.SITE = {
+  origin: "PHL-C88920325B7DD9DB",
   title: "الفلسفة",
   subtitle: "مراجعة الثانية بكالوريا",
   units: [

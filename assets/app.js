@@ -1,3 +1,4 @@
+/* © 2026 الفلسفة — مساحة المراجعة. All rights reserved. Unauthorized copying, republishing or modification is prohibited. Origin ID: PHL-C88920325B7DD9DB */
 (() => {
   "use strict";
 

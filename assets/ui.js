@@ -1,3 +1,4 @@
+/* © 2026 الفلسفة — مساحة المراجعة. All rights reserved. Unauthorized copying, republishing or modification is prohibited. Origin ID: PHL-C88920325B7DD9DB */
 (() => {
   "use strict";
 
@@ -235,4 +236,33 @@
   document.addEventListener("visibilitychange", () => { if (document.hidden) running = false; else start(); });
 
   readColor(); resize(); requestAnimationFrame(frame);
+})();
+
+// ---------------------------------------------------------------------------
+// Rights notice (appears at the bottom of every page).
+// ✏️ To change the owner name or year, edit ONLY the two lines below.
+// ---------------------------------------------------------------------------
+(() => {
+  "use strict";
+  const OWNER = "الفلسفة — مساحة المراجعة";
+  const YEAR = "2026";
+  const ORIGIN_ID = "PHL-C88920325B7DD9DB";
+  document.documentElement.dataset.origin = ORIGIN_ID;
+
+  const text = `© ${YEAR} ${OWNER}. جميع الحقوق محفوظة. لا يجوز نسخ محتوى هذا الموقع أو إعادة نشره أو تعديله أو استغلاله دون إذن كتابي من صاحبه.`;
+  const existing = document.querySelector(".site-footer .wrap");
+  if (existing) {
+    const note = document.createElement("span");
+    note.className = "rights-notice";
+    note.textContent = text;
+    existing.append(note);
+  } else {
+    const footer = document.createElement("footer");
+    footer.className = "rights-footer";
+    const note = document.createElement("p");
+    note.className = "rights-notice";
+    note.textContent = text;
+    footer.append(note);
+    document.body.append(footer);
+  }
 })();

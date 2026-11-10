@@ -1,3 +1,4 @@
+/* © 2026 الفلسفة — مساحة المراجعة. All rights reserved. Unauthorized copying, republishing or modification is prohibited. Origin ID: PHL-C88920325B7DD9DB */
 /* Homepage-specific Arctic layout. */
 .app-header {
   position: sticky;
@@ -255,3 +256,5 @@
   .chip-side { animation-delay: -1.7s; }
   .chip-bottom { animation-delay: -3.2s; }
 }
+.site-footer .wrap { flex-wrap: wrap; padding-block: .8rem; }
+.site-footer .rights-notice { flex-basis: 100%; text-align: center; }
