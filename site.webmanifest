@@ -1,0 +1,15 @@
+{
+  "name": "الفلسفة | مساحة المراجعة الشخصية",
+  "short_name": "الفلسفة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/philo/",
+  "scope": "/philo/",
+  "display": "standalone",
+  "background_color": "#172638",
+  "theme_color": "#172638",
+  "icons": [
+    { "src": "/philo/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/philo/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
